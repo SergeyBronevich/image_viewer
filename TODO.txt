@@ -1,0 +1,9 @@
+1) Improve building scripts. Remove building and linking of the unused libs. Add error checking. Add build for x86 and x86_64
+2) Move string literals to constants
+3) Optimize memory usage
+4) Add error checking
+5) Add cleaning  scripts
+6) Add multiline error text printing
+7) Add support for the extensions in the upper case and mixed case (.jpeg .JPeg)
+8) Add tests
+
