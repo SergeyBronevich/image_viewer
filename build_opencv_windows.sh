@@ -1,13 +1,10 @@
-#!/bin/bash
-
-sudo apt install qt5-default
-
 cd opencv
 
-function build {
-  mkdir $1
-  cd $1
-  cmake CMAKE_BUILD_TYPE=$2 \
+mkdir build
+
+cd build
+
+cmake CMAKE_BUILD_TYPE=RELEASE \
   -D CMAKE_INSTALL_PREFIX=./install \
   -D BUILD_SHARED_LIBS=OFF \
   -D WITH_CUDA=OFF \
@@ -33,13 +30,8 @@ function build {
   -D WITH_GTK=OFF \
   -D BUILD_PNG=ON \
   -D BUILD_ZLIB=ON \
-  if [["$OSTYPE" == 'Linux']]; then -D WITH_QT=ON \
-  ../
-
-  make
-  make install
-
-  cd ..
-}
-
-build build RELEASE
+  -D WITH_QT=OFF \
+../
+make
+make install
+cd ..

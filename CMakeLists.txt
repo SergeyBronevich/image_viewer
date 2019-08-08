@@ -17,10 +17,14 @@ add_executable(${PROJECT_NAME} ${SRC_LIST})
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-find_package(Qt5 COMPONENTS Core Gui Widgets Test Concurrent REQUIRED)
+if (UNIX)
+  find_package(Qt5 COMPONENTS Core Gui Widgets Test Concurrent REQUIRED)
+  target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets ${OpenCV_LIBS})
+endif (UNIX)
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets ${OpenCV_LIBS})
-
+if (WIN32)
+    target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+endif (WIN32)
 
 
 
