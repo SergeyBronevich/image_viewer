@@ -32,6 +32,5 @@ cmake CMAKE_BUILD_TYPE=RELEASE \
   -D BUILD_ZLIB=ON \
   -D WITH_QT=OFF \
 ../
-make
-make install
+
 cd ..
