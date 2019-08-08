@@ -30,8 +30,6 @@ function build {
   -D BUILD_opencv_stitching=OFF \
   -D BUILD_opencv_video=OFF \
   -D BUILD_opencv_videoio=OFF \
-  -D BUILD_protobuf=OFF \
--D BUILD_protobuf=OFF \
   -D WITH_GTK=OFF \
   -D BUILD_PNG=ON \
   -D BUILD_ZLIB=ON \

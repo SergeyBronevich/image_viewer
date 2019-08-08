@@ -9,14 +9,6 @@ src/main.cpp
 src/image_viewer.cpp
 src/image_viewer.hpp)
 
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "DEBUG")
-  set(BUILD_DIR build_debug)
-endif()
-
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "RELEASE")
-  set(BUILD_DIR build_release)
-endif()
-
 set(OpenCV_DIR ${CMAKE_CURRENT_BINARY_DIR}/../opencv/build)
 
 find_package(OpenCV REQUIRED)
