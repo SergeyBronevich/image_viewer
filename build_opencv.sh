@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install libgtk2.0-dev
+sudo apt install qt5-default
 
 cd opencv
 
@@ -30,15 +30,18 @@ function build {
   -D BUILD_opencv_stitching=OFF \
   -D BUILD_opencv_video=OFF \
   -D BUILD_opencv_videoio=OFF \
-  -D WITH_GTK=ON \
+  -D BUILD_protobuf=OFF \
+-D BUILD_protobuf=OFF \
+  -D WITH_GTK=OFF \
   -D BUILD_PNG=ON \
   -D BUILD_ZLIB=ON \
+  -D WITH_QT=ON \
   ../
 
+  make
   make install
 
   cd ..
 }
 
-build build_debug DEBUG
-build build_release RELEASE
+build build RELEASE

@@ -121,7 +121,9 @@ namespace image_viewer
         cv::resizeWindow(IMAGE_WINDOW_NAME, IMAGE_WINDOW_WIDTH,
                          IMAGE_WINDOW_HEIGHT);
 
-        cv::createTrackbar(TRACKBAR_NAME, IMAGE_WINDOW_NAME, 0,
+        int trackBarPos = 0;
+
+        cv::createTrackbar(TRACKBAR_NAME, IMAGE_WINDOW_NAME, &trackBarPos,
                            static_cast<int>(imagesPaths.size() - 1), load_image,
                            &imagesPaths);
 
