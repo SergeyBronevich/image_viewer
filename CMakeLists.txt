@@ -11,6 +11,14 @@ src/image_viewer.hpp)
 
 set(BUILD_DIR build_debug)
 
+if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
+  set(BUILD_DIR build_debug)
+endif()
+
+if (CMAKE_BUILD_TYPE STREQUAL "RELEASE")
+  set(BUILD_DIR build_release)
+endif()
+
 set(OPENCV_DIR ${CMAKE_CURRENT_BINARY_DIR}/../opencv/${BUILD_DIR})
 
 include_directories(${OPENCV_DIR}/install/include/opencv4/)
@@ -40,6 +48,7 @@ set(OPENCV_LIBS
 
 target_link_libraries(${PROJECT_NAME} -L${OPENCV_DIR}/install/lib/)
 target_link_libraries(${PROJECT_NAME} -L${OPENCV_DIR}/install/lib/opencv4/3rdparty/)
+target_link_libraries(${PROJECT_NAME} ${OPENCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ${GTK_LIBRARIES})
 
-target_link_libraries(${PROJECT_NAME}  ${OPENCV_LIBS})
 
