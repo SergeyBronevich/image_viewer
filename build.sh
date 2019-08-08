@@ -8,6 +8,6 @@ function build {
   cd ..
 }
 
-#build build_debug DEBUG
+build build_debug DEBUG
 build build_release RELEASE
 

@@ -18,21 +18,10 @@ include_directories(${OPENCV_DIR}/install/include/opencv4/)
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 
 set(OPENCV_LIBS
--lopencv_ml
--lopencv_features2d
--lopencv_videoio
--lopencv_dnn
--lopencv_video
 -lopencv_imgcodecs
 -lopencv_imgproc
 -lopencv_core
--lopencv_stitching
 -lopencv_highgui
--lopencv_calib3d
--lopencv_photo
--lopencv_gapi
--lopencv_objdetect
--lopencv_flann
 -lade
 -lippiw
 -llibjpeg-turbo
